@@ -9,7 +9,8 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=['text', 'image'])
 def handle_text_image(message):
-	bo.reply_to(message,message.text)
+	bot.reply_to(message,message.text)
+	print(message.text);
 	pass
 while True:
 	try:
