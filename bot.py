@@ -18,7 +18,7 @@ def handle_text_image(message):
     pass
 
 
-@bot.message_handler(content_types=["text", "image"])
+@bot.message_handler(commands=["help"])
 def handle_text_image(message):
     keyboard = telebot.types.InlineKeyboardMarkup()
     keyboard.add(
