@@ -10,13 +10,13 @@ def send_welcome(message):
         message.chat.id, "Send us the new post. Post can contain :images, text."
     )
 
-
+"""
 @bot.message_handler(content_types=["text", "image"])
 def handle_text_image(message):
     bot.send_message(message.chat.id, message.text)
     print(message.chat.id)
     pass
-
+"""
 
 @bot.message_handler(commands=["help"])
 def handle_text_image(message):
