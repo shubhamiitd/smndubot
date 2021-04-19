@@ -1,7 +1,6 @@
 import telebot
 
-bot = telebot.TeleBot("1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es
-")
+bot = telebot.TeleBot("1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es")
 
 @bot.message_handler(commands=['start', 'help'])
 def send_welcome(message):
