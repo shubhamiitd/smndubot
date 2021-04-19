@@ -1,4 +1,5 @@
-import telebot
+import telebot 
+import time
 
 bot = telebot.TeleBot("1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es")
 
@@ -9,5 +10,8 @@ def send_welcome(message):
 @bot.message_handler(func=lambda message: True)
 def echo_all(message):
 	bot.reply_to(message, message.text)
-
-bot.polling()
+while True:
+	try:
+		bot.polling()
+	except Exception:
+		time.sleep(15)
