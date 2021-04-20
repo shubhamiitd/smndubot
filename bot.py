@@ -17,7 +17,7 @@ def gen_markup(tk):
         print(k);
         i=i+1
     print([k]);
-    markup.add([k])
+    markup.add([InlineKeyboardButton("gr", callback_data="gr"),InlineKeyboardButton("gr1", callback_data="gr2")])
     return markup
 
 @bot.callback_query_handler(func=lambda call: True)
