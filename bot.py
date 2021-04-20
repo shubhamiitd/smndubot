@@ -1,6 +1,7 @@
 # This example show how to use inline keyboards and process button presses
 import telebot
 import time
+import emoji
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 TELEGRAM_TOKEN = '1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es'
@@ -11,7 +12,7 @@ def gen_markup(tk):
     i=0
     k=[]
     while(i<len(tk)):
-        k.append(InlineKeyboardButton(tk[i], callback_data=tk[i]));
+        k.append(InlineKeyboardButton(tk[i], callback_data=emoji.demojize(tk[i])));
         print(len(tk))
         print(k);
         i=i+1
