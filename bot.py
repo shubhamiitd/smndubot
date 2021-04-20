@@ -21,10 +21,9 @@ def gen_markup(tk):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
-    if call.data == "cb_yes":
-        bot.answer_callback_query(call.id, "Answer is Yes")
-    elif call.data == "cb_no":
-        bot.answer_callback_query(call.id, "Answer is No")
+    kw=call.data
+    k="you have"+kw+"this post";
+    bot.answer_callback_query(kw, k)
 
 @bot.message_handler(func=lambda message: True)
 def message_handler(message):
