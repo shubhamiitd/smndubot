@@ -15,6 +15,7 @@ def gen_markup(tk):
     
     while(i<len(tk)):
         k=k.append(InlineKeyboardButton(tk[i], callback_data=tk[i]));
+        print(k);
         i=i+1
     markup.add(k)
     return markup
