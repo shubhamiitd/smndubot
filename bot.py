@@ -16,6 +16,7 @@ def gen_markup(tk):
         print(len(tk))
         print(k);
         i=i+1
+    print([k]);
     markup.add([k])
     return markup
 
