@@ -13,8 +13,12 @@ def send_welcome(message):
 @bot.message_handler(content_types=["text"])
 def set_buttons():
     msgg=message.text;
-    msgg=msgg.split('|');
-    print(msgg);
+    print(msgg)
+    bot.send_message(message.chat.id, msgg)
+    msgg=msgg.split(",");
+    
+    print(message.chat.id)
+    pass
    """ global button
     global button2
     button = types.InlineKeyboardMarkup()
