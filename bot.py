@@ -14,7 +14,7 @@ def send_welcome(message):
 def handle_text_image(message):
     tk=message.text
     bot.send_message(message.chat.id, tk)
-    print(tk)
+    print(type(tk))
     print(message.chat.id)
     pass
 
