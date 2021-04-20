@@ -20,7 +20,7 @@ def handle_text_image(message):
     while(i<len(tk)):
         keyboard.add(telebot.types.InlineKeyboardButton(tk[i]))
         i+=1
-    bot.send_message(message.chat.id,"post",reply_markup=keyboard)
+    bot.send_message(message.chat.id,"post",reply_markup=keyboard,url="ada.sasas")
     pass
 
 
