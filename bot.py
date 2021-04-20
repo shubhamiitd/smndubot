@@ -8,7 +8,6 @@ TELEGRAM_TOKEN = '1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es'
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 def gen_markup(tk):
-    markup = InlineKeyboardMarkup()
     i=0
     k=[]
     while(i<len(tk)):
@@ -17,8 +16,7 @@ def gen_markup(tk):
         print(k);
         i=i+1
     print([k]);
-    hg=markup.add(InlineKeyboardButton("gr", callback_data="gr"),InlineKeyboardButton("gr1", callback_data="gr2"))
-    print (hg);
+    markup = InlineKeyboardMarkup([k]);
     return markup
 
 @bot.callback_query_handler(func=lambda call: True)
