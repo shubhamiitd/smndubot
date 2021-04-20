@@ -19,7 +19,7 @@ def handle_text_image(message):
     i=0;
     while(i<len(tk)):
         keyboard.add(telebot.types.InlineKeyboardButton(tk[i])
-        i=i+1
+        i++
     bot.send_message(message.chat.id,"post",reply_markup=keyboard)
     pass
 
