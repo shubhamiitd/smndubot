@@ -6,11 +6,13 @@ TELEGRAM_TOKEN = '1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es'
 
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
-def gen_markup():
+def gen_markup(tk):
     markup = InlineKeyboardMarkup()
-    markup.row_width = 2
-    markup.add(InlineKeyboardButton("Yes", callback_data="cb_yes"),
-                               InlineKeyboardButton("No", callback_data="cb_no"))
+    markup.row_width = len(tk)
+    i=0
+    while(i<len(tk)):
+        markup.add(InlineKeyboardButton(tk[i], callback_data=tk[i]))
+        i=i+1
     return markup
 
 @bot.callback_query_handler(func=lambda call: True)
@@ -22,7 +24,9 @@ def callback_query(call):
 
 @bot.message_handler(func=lambda message: True)
 def message_handler(message):
-    bot.send_message(message.chat.id, "Yes/no?", reply_markup=gen_markup())
+    tk=message.text
+    tk=tk.split('*')
+    bot.send_message(message.chat.id, "post text", reply_markup=gen_markup(tk))
 
 
 
