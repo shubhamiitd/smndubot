@@ -25,6 +25,7 @@ def callback_query(call):
     kw=call.data
     k="you have"+kw+"this post";
     bot.answer_callback_query(kw, k)
+    pass
 
 @bot.message_handler(func=lambda message: True)
 def message_handler(message):
