@@ -16,10 +16,8 @@ def handle_text_image(message):
     tk=tk.split('*')
     bot.send_message(message.chat.id, tk[0])
     keyboard = telebot.types.InlineKeyboardMarkup()
-    i=0;
-    while(i<len(tk)):
-        keyboard.add(telebot.types.InlineKeyboardButton(tk[i]),url="dshfgsjh.dsfds")
-        i+=1
+    for i in tk:
+        keyboard.add(telebot.types.InlineKeyboardButton(i),url="dshfgsjh.dsfds")
     bot.send_message(message.chat.id,"post",reply_markup=keyboard,)
     pass
 
