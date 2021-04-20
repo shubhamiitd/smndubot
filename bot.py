@@ -12,11 +12,7 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=["text"])
 def set_buttons():
-    msgg=message.text;
-    print(msgg)
-    bot.send_message(message.chat.id, msgg)
-    msgg=msgg.split(",");
-    
+    bot.send_message(message.chat.id, message.text)   
     print(message.chat.id)
     pass
 
