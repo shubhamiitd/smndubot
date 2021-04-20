@@ -14,7 +14,8 @@ def send_welcome(message):
 def set_buttons():
     msgg=message.text;
     msgg=msgg.split('|');
-    global button
+    print(msgg);
+   """ global button
     global button2
     button = types.InlineKeyboardMarkup()
     btn1 = types.InlineKeyboardButton(msgg[0], callback_data='/send')
@@ -24,7 +25,7 @@ def set_buttons():
     btn3 = types.InlineKeyboardButton(i18n.t('bot.btn3'), callback_data='/as_is')
     btn4 = types.InlineKeyboardButton(i18n.t('bot.btn4'), callback_data='/converted')
     button2.row(btn3, btn4) 
-"""
+
 @bot.message_handler(content_types=["text", "image"])
 def handle_text_image(message):
     bot.send_message(message.chat.id, message.text)
