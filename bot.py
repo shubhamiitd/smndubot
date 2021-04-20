@@ -9,10 +9,9 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 def gen_markup(tk):
     markup = InlineKeyboardMarkup()
-    markup.row_width =2
+    
     i=0
     k=[]
-    
     while(i<len(tk)):
         k=k.append(InlineKeyboardButton(tk[i], callback_data=tk[i]));
         print(k);
