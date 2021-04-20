@@ -9,7 +9,6 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 def gen_markup(tk):
     markup = InlineKeyboardMarkup()
-    
     i=0
     k=[]
     while(i<len(tk)):
@@ -17,7 +16,7 @@ def gen_markup(tk):
         print(len(tk))
         print(k);
         i=i+1
-    markup.add(k)
+    markup.add([k])
     return markup
 
 @bot.callback_query_handler(func=lambda call: True)
