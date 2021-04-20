@@ -29,7 +29,7 @@ def callback_query(call):
 def message_handler(message):
     tk=message.text
     tk=tk.split('*')
-    bot.send_message(message.chat.id, "post text", reply_markup=gen_markup(tk))
+    bot.send_message(message.chat.id, "post fdjfdbhj hjfdhjgbhjfg fbgdhjgbjhgbhjg fhgbdfhjgbfhdjg fjgdhjgbfdjhgbdjg gdjhgbfdjkgbdfjhgb fgbhjdbgjhdbgjhdgb fhjghjdgbhjgtext", reply_markup=gen_markup(tk))
 
 
 
