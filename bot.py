@@ -12,7 +12,9 @@ def send_welcome(message):
 
 @bot.message_handler(content_types=["text", "image"])
 def handle_text_image(message):
-    bot.send_message(message.chat.id, message.text)
+    tk=message.text
+    bot.send_message(message.chat.id, tk)
+    print(tk)
     print(message.chat.id)
     pass
 
