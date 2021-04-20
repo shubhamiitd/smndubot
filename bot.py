@@ -12,7 +12,7 @@ def gen_markup(tk):
     i=0
     k=[]
     while(i<len(tk)):
-        k.append(InlineKeyboardButton(tk[i], callback_data=emoji.demojize(tk[i])));
+        k.append(InlineKeyboardButton(tk[i], callback_data=tk[i]));
         i=i+1
     print([k]);
     markup = InlineKeyboardMarkup([k]);
@@ -24,7 +24,7 @@ def callback_query(call):
     print(kw);
     k="you have"+kw+"this post"
     print(k);
-    bot.answer_callback_query(kw, k)
+    bot.answer_callback_query(call.id, k)
     pass
 
 @bot.message_handler(func=lambda message: True)
