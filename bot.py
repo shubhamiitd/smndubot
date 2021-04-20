@@ -13,7 +13,7 @@ def gen_markup(tk):
     i=0
     k=[]
     while(i<len(tk)):
-        k=k.append(InlineKeyboardButton(tk[i], callback_data=tk[i]));
+        k.append(InlineKeyboardButton(tk[i], callback_data=tk[i]));
         print(len(tk))
         print(k);
         i=i+1
