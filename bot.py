@@ -19,7 +19,9 @@ def set_buttons():
     
     print(message.chat.id)
     pass
-   """ global button
+
+
+""" global button
     global button2
     button = types.InlineKeyboardMarkup()
     btn1 = types.InlineKeyboardButton(msgg[0], callback_data='/send')
