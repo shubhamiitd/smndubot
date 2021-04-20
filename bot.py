@@ -7,11 +7,12 @@ TELEGRAM_TOKEN = '1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es'
 bot = telebot.TeleBot(TELEGRAM_TOKEN)
 
 def gen_markup(tk):
-    markup = InlineKeyboardMarkup()
     if (len(tk)<6):
-        markup.row_width = len(tk)
+        size= len(tk)
     else:
-        markup.row_width = 6
+        size = 6
+    markup = InlineKeyboardMarkup(size)
+    markup.row_width =2
     i=0
     while(i<len(tk)):
         markup.add(InlineKeyboardButton(tk[i], callback_data=tk[i]))
