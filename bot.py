@@ -22,7 +22,7 @@ def gen_markup(tk):
 def callback_query(call):
     kw=call.data
     print(kw);
-    k="you have"+kw+"this post"
+    k="you have "+kw+" this post."
     print(k);
     bot.answer_callback_query(call.id, k)
     pass
