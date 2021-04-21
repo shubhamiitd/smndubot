@@ -83,9 +83,9 @@ def message_handler(message,update_id):
         tk=message.text
         tk=tk.split('*')
         if (attachment==0):
-            bot.send_message(message.chat.id, caption, reply_markup=gen_markup(tk)))
+            bot.send_message(message.chat.id, caption, reply_markup=gen_markup(tk))
         else:
-            bot.sendPhoto(message.chat.id, photo, caption = caption, reply_markup=gen_markup(tk)))
+            bot.sendPhoto(message.chat.id, photo, caption = caption, reply_markup=gen_markup(tk))
     else:
         bot.send_message(message.chat.id, "The above message can't be recognised. Please follow the guidelines.")
 
