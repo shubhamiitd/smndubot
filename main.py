@@ -19,7 +19,7 @@ def send_welcome(message):
         )
 
 def reply(message,update_id):
-    sender_id=message.from.id
+    sender_id=message.from_user.id
     username=message.chat.username
     message_id=message.message_id
     chat_id=message.chat.id
@@ -61,10 +61,6 @@ def send_welcome2(message):
         )
 
 
-
-
-
-"""
 def gen_markup(tk):
     i=0
     k=[]
@@ -78,7 +74,7 @@ def gen_markup(tk):
 @bot.message_handler(func=lambda message: True)
 def message_handler(message,update_id):
     #db check updateid-1
-    sql="select * from messages where sender_id="+str(message.from.id)+" AND update_id= "+str(update_id-1)
+    sql="select * from messages where sender_id="+str(message.from_user.id)+" AND update_id= "+str(update_id-1)
     cursor.execute(sql)
     records= cursor.fetchall()
     
@@ -108,9 +104,6 @@ def callback_query(call):
 
 
 
-
-
-"""
 
 
 
