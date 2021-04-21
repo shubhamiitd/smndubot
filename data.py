@@ -1,11 +1,7 @@
 
 import mysql.connector
 
-db = mysql.connector.connect(
-  host="localhost",
-  user="root",
-  password="you"
- )
+db = mysql.connector.connect(host="localhost",user="root",password="you",database="smndubot")
 
 cursor = db.cursor()
 
