@@ -42,7 +42,7 @@ def reply(message,update_id):
     #save to db
     sql = """INSERT INTO messages(sender_id, sender_name, sender_username, message_id, chat_id, text, attachments, attachments_id, update_id)VALUES (sender_id,username, message_id,chat_id, text,attachments, attachments_id,update_id)"""
     cursor.execute(sql)
-    
+    mydb.commit()
     markup="Now please send us the reaction button emojis separated by (*) Eg:😍*🥳*💕 will create three buttons for you. You may add max of 6 buttons. If you want to edit the above post, type : /editpost. "
     return (markup)
     
@@ -51,7 +51,7 @@ def reply(message,update_id):
 @bot.message_handler(commands=["newpost"])
 def send_welcome1(message,update_id):
     bot.send_message(
-        message.chat.id, "Send us the post. Your post can contain images or text.",reply_markup=reply(message,update_id);
+        message.chat.id, "Create a new post. Your post can contain images or text.",reply_markup=reply(message,update_id);
         )
         
 @bot.message_handler(commands=["editpost"])
