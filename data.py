@@ -11,7 +11,7 @@ sql = """CREATE TABLE `users` (
 	`username` TEXT DEFAULT NULL,
 	`user_id` INT,
 	`is_admin` TINYINT DEFAULT '0',
-	`last_access` TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+	`last_access` TIMESTAMP ON DEFAULT CURRENT_TIMESTAMP
 );"""
 
 cursor.execute(sql)
