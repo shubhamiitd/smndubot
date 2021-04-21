@@ -15,17 +15,16 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
     bot.send_message(
-        message.chat.id, "Welcome to SmndUnibot. \n To use this bot the following commands \:\n newpost = create a new post. \n /editpost = edit a post.\nThis bot accepts only text and images in the post."
+        message.chat.id, "Welcome to SmndUnibot. \n To use this bot the following commands : \n /newpost = create a new post. \n /editpost = edit a post.\nThis bot accepts only text and images in the post."
         )
 
-def reply(message,update_id):
+def reply(message):
     sender_id=message.from_user.id
     username=message.chat.username
     message_id=message.message_id
     chat_id=message.chat.id
     first_name=message.chat.first_name
     text=message.text
-    update_id=update_id
     if "photo" in message["message"]:
         attachments=1
         attachments_id=message.photo.file_unique_id
@@ -40,7 +39,7 @@ def reply(message,update_id):
         attachments_id=""
     
     #save to db
-    sql = """INSERT INTO messages(sender_id, sender_name, sender_username, message_id, chat_id, text, attachments, attachments_id, update_id)VALUES (sender_id,username, message_id,chat_id, text,attachments, attachments_id,update_id)"""
+    sql = """INSERT INTO messages(sender_id, sender_name, sender_username, message_id, chat_id, text, attachments, attachments_id)VALUES (sender_id,username, message_id,chat_id, text,attachments, attachments_id)"""
     cursor.execute(sql)
     mydb.commit()
     markup="Now please send us the reaction button emojis separated by (*) Eg:😍*🥳*💕 will create three buttons for you. You may add max of 6 buttons. If you want to edit the above post, type : /editpost. "
@@ -49,8 +48,8 @@ def reply(message,update_id):
 
     
 @bot.message_handler(commands=["newpost"])
-def send_welcome1(message,update_id):
-    bot.send_message(message.chat.id, "Create a new post. Your post can contain images or text.",reply_markup=reply(message,update_id))
+def send_welcome1(message):
+    bot.send_message(message.chat.id, "Create a new post. Your post can contain images or text.",reply_markup=reply(message))
         
 @bot.message_handler(commands=["editpost"])
 def send_welcome2(message):
@@ -70,12 +69,10 @@ def gen_markup(tk):
     return markup
 
 @bot.message_handler(func=lambda message: True)
-def message_handler(message,update_id):
-    #db check updateid-1
-    sql="select * from messages where sender_id="+str(message.from_user.id)+" AND update_id= "+str(update_id-1)
+def message_handler(message):
+    sql="select * from messages where sender_id="+str(message.from_user.id)+" AND update_id= "+str(message.message_id-1)
     cursor.execute(sql)
     records= cursor.fetchall()
-    
     if (len(records!=0)):
         attachment=records[0][6]
         photo=records[0][7]
