@@ -7,7 +7,7 @@ cursor = db.cursor()
 cursor.execute("DROP TABLE IF EXISTS users")
 
 sql = """CREATE TABLE `users` (
-	'firstname' TEXT DEFAULT NULL,
+	`firstname` TEXT DEFAULT NULL,
 	`username` TEXT DEFAULT NULL,
 	`user_id` INT,
 	`is_admin` TINYINT DEFAULT '0',
