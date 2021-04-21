@@ -70,7 +70,7 @@ def gen_markup(tk):
 
 @bot.message_handler(func=lambda message: True)
 def message_handler(message):
-    sql="select * from messages where sender_id="+str(message.from_user.id)+" AND update_id= "+str(message.message_id-1)
+    sql="select * from messages where sender_id="+str(message.from_user.id)+" AND message_id= "+str(message.message_id-1)
     cursor.execute(sql)
     records= cursor.fetchall()
     if (len(records!=0)):
