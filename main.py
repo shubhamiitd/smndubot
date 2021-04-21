@@ -50,9 +50,7 @@ def reply(message,update_id):
     
 @bot.message_handler(commands=["newpost"])
 def send_welcome1(message,update_id):
-    bot.send_message(
-        message.chat.id, "Create a new post. Your post can contain images or text.",reply_markup=reply(message,update_id);
-        )
+    bot.send_message(message.chat.id, "Create a new post. Your post can contain images or text.",reply_markup=reply(message,update_id))
         
 @bot.message_handler(commands=["editpost"])
 def send_welcome2(message):
