@@ -8,8 +8,6 @@ mydb = mysql.connector.connect(
  )
 
 cursor = mydb.cursor()
-# Drop table if it already exist using execute() method.
-cursor.execute("DROP TABLE IF EXISTS USERS")
 
 # Create table as per requirement
 sql = """CREATE TABLE `users` (
