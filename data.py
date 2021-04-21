@@ -19,11 +19,7 @@ sql = """INSERT INTO users(firstname, username,
          user_id, is_admin)
          VALUES ('Shubham','sy_tele', 793347625, 1 )"""
 
-  
-# loop through the rows
-for row in result:
-    print(row)
-    print("\n")
+
 try:
    # Execute the SQL command
    cursor.execute(sql)
@@ -38,6 +34,11 @@ cursor.execute("SELECT * FROM users")
   
 # fetch all the matching rows 
 result = cursor.fetchall()
+  
+# loop through the rows
+for row in result:
+    print(row)
+    print("\n")
 
 
 
