@@ -4,7 +4,7 @@ import mysql.connector
 db = mysql.connector.connect(host="localhost",user="root",password="you",database="smndubot")
 
 cursor = db.cursor()
-cursor.execute("DROP TABLE IF EXISTS users")
+cursor.execute("DROP TABLE IF EXISTS messages")
 
 sql = """CREATE TABLE `messages` (
 	`sender_id` INT NOT NULL,
@@ -15,7 +15,7 @@ sql = """CREATE TABLE `messages` (
 	`text` LONGTEXT,
 	`attachments` TINYINT DEFAULT '0',
 	`attachments_id` TEXT DEFAULT NULL,
-	`time` TIMESTAMP
+	`time` TIMESTAMP default CURRENT_TIMESTAMP
 );"""
 
 try:
