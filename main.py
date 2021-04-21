@@ -18,13 +18,14 @@ def send_welcome(message):
         message.chat.id, "Welcome to SmndUnibot. \n To use this bot the following commands \:\n newpost = create a new post. \n /editpost = edit a post.\nThis bot accepts only text and images in the post."
         )
 
-def reply(message):
+def reply(message,update_id):
     sender_id=message.from.id
     username=message.chat.username
     message_id=message.message_id
     chat_id=message.chat.id
     first_name=message.chat.first_name
     text=message.text
+    update_id=update_id
     if "photo" in message["message"]:
         attachments=1
         attachments_id=message.photo.file_unique_id
@@ -37,9 +38,9 @@ def reply(message):
     else:
         attachments=0
         attachments_id=""
-    update_id=
+    
     #save to db
-    sql = """INSERT INTO messages(sender_id, sender_name, sender_username, message_id, chat_id, text, attachments, attachments_id, update_id)VALUES (sender_id,username, message_id,chat_id, text,, attachments_id,)"""
+    sql = """INSERT INTO messages(sender_id, sender_name, sender_username, message_id, chat_id, text, attachments, attachments_id, update_id)VALUES (sender_id,username, message_id,chat_id, text,attachments, attachments_id,update_id)"""
     cursor.execute(sql)
     
     markup="Now please send us the reaction button emojis separated by (*) Eg:😍*🥳*💕 will create three buttons for you. You may add max of 6 buttons. If you want to edit the above post, type : /editpost. "
@@ -48,9 +49,9 @@ def reply(message):
 
     
 @bot.message_handler(commands=["newpost"])
-def send_welcome1(message):
+def send_welcome1(message,update_id):
     bot.send_message(
-        message.chat.id, "Send us the post. Your post can contain images or text.",reply_markup=reply(message);
+        message.chat.id, "Send us the post. Your post can contain images or text.",reply_markup=reply(message,update_id);
         )
         
 @bot.message_handler(commands=["editpost"])
@@ -59,6 +60,11 @@ def send_welcome2(message):
         message.chat.id, "This will be added soon."
         )
 
+
+
+
+
+"""
 def gen_markup(tk):
     i=0
     k=[]
@@ -104,7 +110,7 @@ def callback_query(call):
 
 
 
-
+"""
 
 
 
