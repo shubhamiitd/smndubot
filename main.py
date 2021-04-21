@@ -15,7 +15,7 @@ bot = telebot.TeleBot(TELEGRAM_TOKEN)
 @bot.message_handler(commands=["start"])
 def send_welcome(message):
     bot.send_message(
-        message.chat.id, "Welcome to SmndUnibot. \n To use this bot the following commands : \n /newpost = create a new post. \n /editpost = edit a post.\nThis bot accepts only text and images in the post."
+        message.chat.id, "Welcome to SmndUnibot. \n To use this bot use the following commands : \n /newpost = create a new post. \n /editpost = edit a post.\nThis bot accepts only text and images in the post."
         )
 
 def reply(message):
@@ -49,7 +49,7 @@ def reply(message):
     
 @bot.message_handler(commands=["newpost"])
 def send_welcome1(message):
-    bot.send_message(message.chat.id, "Create a new post. Your post can contain images or text.",reply_markup=reply(message))
+    bot.send_message(message.chat.id, "Create a new post. Your post can contain images or text.")
         
 @bot.message_handler(commands=["editpost"])
 def send_welcome2(message):
