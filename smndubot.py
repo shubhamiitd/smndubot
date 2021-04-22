@@ -6,7 +6,7 @@ bot = telebot.TeleBot("1750685032:AAHbsmhiIp9SA5d71JIA9T8fEdoLPPayq0s")
 def deletemsg(message):
 	k= message.document.mime_type
 	k=k.split("/")
-	if (k[0]=="application" && k[1]!="pdf"):
+	if (k[0]=="application" and k[1]!="pdf"):
 		return True
 	else:
 		return False
