@@ -14,7 +14,7 @@ def deletemsg(message):
 # Handles all sent documents and audio files
 @bot.message_handler(content_types=['document'])
 def handle_docs(message):
-  	f=deletemsg(message)
+  	f=deletemsg(message);
   	if(f==true):
     	bot.deleteMessage(message.chat.id, message.id)	
 	pass
