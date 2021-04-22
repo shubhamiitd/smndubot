@@ -16,7 +16,7 @@ def deletemsg(message):
 def handle_docs(message):
 	f=deletemsg(message)
 	if(f==True):
-		bot.deleteMessage(message.chat.id, message.id)	
+		bot.delete_message(message.chat.id, message.id)	
 	pass
 
 
