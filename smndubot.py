@@ -7,15 +7,15 @@ def deletemsg(message):
 	k= message.document.mime_type
 	k=k.split("/")
 	if (k[0]=="application"):
-		return true
+		return True
 	else:
-		return false
+		return False
 
 # Handles all sent documents and audio files
 @bot.message_handler(content_types=['document'])
 def handle_docs(message):
 	f=deletemsg(message)
-	if(f==true):
+	if(f==True):
 		bot.deleteMessage(message.chat.id, message.id)	
 	pass
 
