@@ -1,7 +1,7 @@
 import telebot
 from telebot import types
 
-bot = telebot.TeleBot("1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es")
+bot = telebot.TeleBot("1750685032:AAHbsmhiIp9SA5d71JIA9T8fEdoLPPayq0s")
 
 def deletemsg(message):
 	k= message.document.mime_type
