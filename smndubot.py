@@ -7,7 +7,7 @@ def deletemsg(message):
   	k= message.document.mime_type;
   	k=k.split("/");
   	if (k[0]=="application"):
-    	return trure
+    	return true
   	else:
     	return false
 
