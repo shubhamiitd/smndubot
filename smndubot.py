@@ -4,20 +4,19 @@ from telebot import types
 bot = telebot.TeleBot("1607683994:AAGotYV7rp5cixLimS33rr0P1ir3-BBm6es")
 
 def deletemsg(message):
-  k= message.document.mime_type;
-  k=k.split("/");
-  if (k[0]=="application"):
-    return trure
-  else:
-    return false
+  	k= message.document.mime_type;
+  	k=k.split("/");
+  	if (k[0]=="application"):
+    	return trure
+  	else:
+    	return false
 
 # Handles all sent documents and audio files
 @bot.message_handler(content_types=['document'])
 def handle_docs(message):
-  f=deletemsg(message)
-  if(f==true):
-    bot.deleteMessage(message.chat.id, message.id)
-		
+  	f=deletemsg(message)
+  	if(f==true):
+    	bot.deleteMessage(message.chat.id, message.id)	
 	pass
 
 
